@@ -18,10 +18,10 @@ https://codepen.io/eury/full/VdZqdo/
 
 ## Built With:
 
-*HTML
-*CSS
-*JavaScript
-*jQuery
+*HTML<br>
+*CSS<br>
+*JavaScript<br>
+*jQuery<br>
 
 
 
