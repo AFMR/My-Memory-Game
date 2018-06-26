@@ -1,0 +1,230 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+ background: url('https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  font-family: 'Coda', cursive;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: green;
+    font-size:2.5vw;
+}
+
+
+
+ .score-panel {
+     text-align: left;
+     width: 400px;
+     margin-bottom: 10px;
+     color: #7ABDB8;
+     font-size: 1vw;
+ }
+
+ .score-panel .stars {
+     margin: 0;
+     padding: 0;
+     display: inline-block;
+     margin: 0 10px 0 0;
+     color: yellow;
+ }
+
+
+ .score-panel .stars li {
+   list-style: none;
+   display: inline-block;
+}
+
+.timer_container li {
+  list-style: none;
+  display: inline-block;
+}
+
+/** Places the restart button on the RHS */
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+    display: inline;
+}
+
+.moves_text {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.timer_container {
+  float: right;
+  margin-right: 10px;
+}
+
+.timer {
+  display: inline;
+}
+
+.colon_one {
+  visibility: hidden;
+}
+
+.minutes {
+  visibility: hidden;
+}
+
+.colon_two {
+  visibility: hidden;
+}
+
+.hours {
+  visibility: hidden;
+}
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: #ffffff;
+  
+  
+}
+
+  /* Modal Content/Box */
+.modal_content {
+ 
+    margin: 15% auto; 
+    width: 35%; 
+    color: #9900cc;
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    padding: 30px;
+    background-color: black;
+  
+}
+
+.modal_content .win_message {
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+    color: #9900cc;
+  }
+
+.modal_content p {
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+  
+}
+
+.play_again {
+    background-color: #9900cc;
+    color: white;
+    font-size: 16px;
+    padding: 20px 20px;
+    border: none;
+    font-family: 'Open Sans', sans-serif;;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.play_again:hover,
+.play_again:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button_container {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/**
+ * Deck
+ * Styles for the deck of cards
+ */
+
+.deck {
+   width: 660px;
+   min-height: 680px;
+   background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+   padding: 32px;
+   border-radius: 10px;
+   box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+   margin: 0 0 3em;
+}
+
+.deck .card {
+   height: 125px;
+   width: 125px;
+    background-image: url("https://images.pexels.com/photos/355411/pexels-photo-355411.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+   /** font-size: 0 makes the icons disappear */
+   font-size: 0px;
+   color: #ffffff;
+   border-radius: 8px;
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+   transform: rotateY(180grad);
+   background: #a0e401;
+   cursor: default;
+   font-size: 33px;
+}
+
+.deck .card.match {
+   cursor: default;
+   background: #8166b7;
+   font-size: 33px;
+}
+
+.deck .card.not-a-match {
+   cursor: default;
+   background: #ff00c3;
+   font-size: 33px;
+}
+
+.deck .card:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
