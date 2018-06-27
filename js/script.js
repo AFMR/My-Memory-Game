@@ -42,8 +42,13 @@ $(document).ready(function(){
     var time_string = "Time taken: ";
     
 
+//Starting the game
 
     $('.card').click(function(){
+
+        if ($(this).hasClass('open')){
+            return;
+        }
 
         if (timer_start === false) {
             timer();
@@ -54,6 +59,7 @@ $(document).ready(function(){
             $(this).addClass('open');
             first_card = $(this);
             moved = moved + 1;
+
         }
         else if (moved === 1){
             $(this).addClass('open');
@@ -76,6 +82,8 @@ $(document).ready(function(){
         scores(counter);
     });
 
+//When the cards are a match, we add a pair until 8 to end the game.
+
     function matched(first_card, second_card) {
         first_card.addClass('match');
         second_card.addClass('match');
@@ -85,6 +93,7 @@ $(document).ready(function(){
             endGame();
         }
     }
+//When not a match, they change the color.
 
     function notMatch(first_card, second_card) {
         first_card.addClass('not-a-match');
@@ -92,13 +101,14 @@ $(document).ready(function(){
         closeCards(first_card, second_card);
     }
     
+//To close the not matched cards.
     function closeCards(first_card, second_card){
         setTimeout(function(){
             first_card.removeClass('not-a-match open');
             second_card.removeClass('not-a-match open');
         }, 500);
     }
-
+//Timer function
     function timer() {
         game_timer = setInterval(function() {
             if(seconds < 60) {
@@ -116,7 +126,7 @@ $(document).ready(function(){
             }
           }, 1000);
       }
-  
+//scores and stars
       function scores(counter){
         if(counter > 1) {
             $('.score-panel').find('.moves').text(counter);
@@ -127,19 +137,16 @@ $(document).ready(function(){
             $('.moves_text').text("Move");
         }
 
-        if (counter === 14) {
+        if (counter === 16) {
             $('#first-star').removeClass('fa-star').addClass('fa-star-o');
             rating = "2 stars";
         }
-        else if (counter === 24) {
+        else if (counter >= 20) {
             $('#second-star').removeClass('fa-star').addClass('fa-star-o');
             rating = "1 star";
         }
-        else if (counter >= 34) {
-            $('#third-star').removeClass('fa-star').addClass('fa-star-o');
-            rating = "0 stars";
-        }
     }
+//When the game ends, display screen with scores and play again button.
 
     function endGame() {
         clearInterval(game_timer);
@@ -165,6 +172,7 @@ $(document).ready(function(){
         restartGame();
     });
 
+    // When a new game starts, restarts everything for a new game.
     function restartGame() {
         $('.card').removeClass('open match');
         moved = 0;
