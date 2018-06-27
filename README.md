@@ -2,7 +2,7 @@
 
 A game to find pair images.
 
-##How to use the game :-
+## How to use the game :-
 Download or clone the repositoryon your machine.
 Extract the .zip file
 Open index.html in your browser.
