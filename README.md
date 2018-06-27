@@ -2,6 +2,11 @@
 
 A game to find pair images.
 
+##How to use the game :-
+Download or clone the repositoryon your machine.
+Extract the .zip file
+Open index.html in your browser.
+
 ## HOW TO PLAY:
 
 1.- Turn over any two cards.<br>
