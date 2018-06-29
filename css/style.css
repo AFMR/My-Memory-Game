@@ -34,7 +34,7 @@ body {
 h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    color: green;
+    color: purple;
     font-size:4vw;
     
 
@@ -46,7 +46,7 @@ h1 {
      text-align: left;
      width: 80%;
      margin-bottom: 10px;
-     color: #7ABDB8;
+     color: pink;
      font-size: 2.5vw;
  }
 
@@ -179,11 +179,11 @@ h1 {
  */
 
 .deck {
-   width: 660px;
-   min-height: 680px;
-   background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
-   padding: 32px;
-   border-radius: 10px;
+  width: 60%;
+  min-height: 100%;
+  background: linear-gradient(160deg, #f3d1f4 0%, #7830b2 100%);;
+   padding: 2.1vw;
+   border-radius: 5vw;
    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
    display: flex;
    flex-wrap: wrap;
@@ -193,13 +193,15 @@ h1 {
 }
 
 .deck .card {
-   height: 125px;
-   width: 125px;
-    background-image: url("https://images.pexels.com/photos/355411/pexels-photo-355411.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+   height: 12vw;
+   width: 12vw;
+   margin-bottom: 1vw;
+   background-image: url("https://images.pexels.com/photos/1121123/pexels-photo-1121123.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+   background-size: 100% 100%;
    /** font-size: 0 makes the icons disappear */
    font-size: 0px;
    color: #ffffff;
-   border-radius: 8px;
+   border-radius: 8vw;
    cursor: pointer;
    display: flex;
    justify-content: center;
@@ -216,7 +218,7 @@ h1 {
 
 .deck .card.match {
    cursor: default;
-   background: #8166b7;
+   background: #800080;
    font-size: 33px;
 }
 
@@ -231,37 +233,27 @@ h1 {
   cursor: pointer;
 }
 
-@media screen and (max-width :740px){
+@media screen and (max-width :1150px){
 
-  h1{
-    font-size: 5vw;
-    font-weight: 600;
+  .deck {
+    width: 90%;
+    min-height: auto;
   }
+
+
+ .deck .card {
+  height: 20vw;
+  width: 20vw;
+  border-radius: 10vw;
+  margin-bottom: 1vw;
+ }
+  
+}
+
+@media screen and (max-width :600px){
+
   .deck {
-   width: 80%;
-   min-height: 600px;}
-
-   .deck .card {
-   height: 120px;
-   width: 120px;}
-}
-
-@media screen and (max-width: 700px){
-
-  .deck {
-   width: 90%;
-   min-height: 80%;}
-
-   .deck .card {
-   height: 25%;
-   width: 3%;
-   padding: 9vw;}
-}
-@media screen and (max-width: 450px){
-  .score-panel{
-    width: 80%;}
-    .modal_content{
-      width:100%;
-    }
-
-}
+   width: 100%;
+   min-height: auto;
+  }
+  }
